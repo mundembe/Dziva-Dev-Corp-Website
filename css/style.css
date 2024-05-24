@@ -20,7 +20,7 @@ h1,
 h2,
 .h2,
 .fw-bold {
-    font-weight: 700 !important;
+    font-weight: 600 !important;
 }
 
 h3,
@@ -28,7 +28,7 @@ h3,
 h4,
 .h4,
 .fw-medium {
-    font-weight: 600 !important;
+    font-weight: 500 !important;
 }
 
 h5,
@@ -36,7 +36,7 @@ h5,
 h6,
 .h6,
 .fw-semi-bold {
-    font-weight: 500 !important;
+    font-weight: 400 !important;
 }
 
 
@@ -98,8 +98,14 @@ h6,
 }
 
 .top-bar {
-    height: 45px;
+    height: 30px;
     border-bottom: 1px solid rgba(53, 94, 252, .07);
+    background-color: rgba(138, 138, 138, 0.315); /* Semi-transparent background */
+}
+
+.top-bar div small {
+    color: #fff !important; /* White color for navbar links */
+    
 }
 
 .navbar .dropdown-toggle::after {
@@ -121,6 +127,24 @@ h6,
 .navbar .navbar-nav .nav-link:hover,
 .navbar .navbar-nav .nav-link.active {
     color: var(--primary);
+}
+
+/* Navbar styles */
+.navbar {
+    background-color: rgba(126, 126, 126, 0.315); /* Semi-transparent background */
+    padding: 10px 20px;
+}
+
+.navbar-nav .nav-link {
+    color: #fff !important; /* White color for navbar links */
+    font-weight: bold;
+}
+
+.navbar-brand {
+    color: #fff !important; /* White color for navbar brand */
+}
+.logo img{
+    min-height: 500;
 }
 
 @media (max-width: 991.98px) {
@@ -181,6 +205,57 @@ h6,
     text-align: start;
     z-index: 1;
 }
+/* Blur overlay */
+.overlay {
+    position: relative;
+}
+
+.overlay::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 60%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.139); /* Light color overlay */
+    backdrop-filter: blur(5px); /* Blur effect */
+    -webkit-backdrop-filter: blur(10px); /* Blur effect for Safari */
+    z-index: 1;
+}
+
+.overlay > .row {
+    position: relative;
+    z-index: 2;
+}
+
+/* Text shadow for better readability */
+.carousel-caption p, .carousel-caption h1 {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+.carousel-caption p {
+    font-size:x-large;
+}
+
+@media (max-width: 1000px) {
+    .overlay::before {
+        width: 100%;
+    }
+}
+
+/* Slow zoom effect for carousel images */
+.carousel-zoom {
+    animation: zoomEffect 10s ease-in-out forwards;
+}
+
+@keyframes zoomEffect {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(1.1);
+    }
+}
 
 .carousel-control-prev,
 .carousel-control-next {
@@ -231,6 +306,13 @@ h6,
 
 .page-header .breadcrumb-item+.breadcrumb-item::before {
     color: var(--tertiary);
+}
+
+/* About */
+.about-img {
+    max-height: 600px;
+    width: 100%;
+    padding: 0% 5%;
 }
 
 
@@ -294,6 +376,9 @@ h6,
     color: #FFFFFF !important;
 }
 
+.services-img{
+    height: 350px;
+}
 
 /*** Project ***/
 .project-item,
@@ -377,6 +462,11 @@ h6,
 
 
 /*** Team ***/
+.our-team {
+    display: flexbox;
+    justify-content: center;
+}
+
 .team-item {
     position: relative;
     padding: 4rem 0;
